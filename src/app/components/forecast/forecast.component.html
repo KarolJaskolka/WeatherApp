@@ -1,0 +1,12 @@
+<section>
+    <ng-container *ngIf="forecast">
+        <div *ngFor="let day of forecast.daily; let i = index">
+            <ng-container *ngIf="i != 0">
+                <h4>{{dates[i] | date: 'dd/MM' }}</h4>
+                <img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png">
+                <h3>{{day.temp.day | number:'1.0-0' }} °C</h3>
+            </ng-container>
+        </div>
+    </ng-container>
+</section>
+

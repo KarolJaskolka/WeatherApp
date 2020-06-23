@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LocationComponent } from './components/location/location.component';
 import { SearchComponent } from './components/search/search.component';
 import { CurrentComponent } from './components/current/current.component';
+import { ForecastComponent } from './components/forecast/forecast.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,16 @@ import { CurrentComponent } from './components/current/current.component';
     HomeComponent,
     LocationComponent,
     SearchComponent,
-    CurrentComponent
+    CurrentComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

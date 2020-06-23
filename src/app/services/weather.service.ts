@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Weather } from '../models/weather';
+import { Forecast } from '../models/forecast';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,15 @@ export class WeatherService {
   constructor(private http:HttpClient) { }
 
   getWeatherByCity(city: string):Observable<Weather> {
-    return this.http.get<Weather>(`http://api.openweathermap.org/data/2.5/weather?id=${city}&appid=${this.key}&units=metric`)
+    return this.http.get<Weather>(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.key}&units=metric`)
   }
 
   getWeatherByCoords(lat: number, lon: number) {
     return this.http.get<Weather>(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.key}&units=metric`)
+  }
+
+  getForecastByCoords(lat: number, lon: number){
+    return this.http.get<Forecast>(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly}&appid=${this.key}&units=metric`)
   }
 
   getWeatherIcon(icon: string) {

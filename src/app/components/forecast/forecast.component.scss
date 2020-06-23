@@ -1,0 +1,27 @@
+@import '../../../styles.scss';
+
+section {
+    display: flex;
+    background-color: $second;
+    margin-bottom: 1em;
+}
+
+div:nth-child(even) {
+    background-color: #bec0c5;
+}
+
+h3, h4 {
+    text-align: center;
+    padding: 0.5em;
+}
+
+img {
+    height: 75px;
+    width: 75px;
+}
+
+@media (max-width: 760px) {
+    section {
+        overflow-x: scroll;
+    }
+}
