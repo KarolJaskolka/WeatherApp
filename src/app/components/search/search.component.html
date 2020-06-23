@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="cityForm">
+    <div class="input-box">
+        <input type="text" formControlName="city" name="city" placeholder="Another location...">
+        <ng-container *ngIf="cityForm.get('city').touched && cityForm.get('city').errors">
+            <span *ngIf="cityForm.get('city').errors.required" class="warning">Invalid input</span>
+        </ng-container>
+    </div>
+    <div class="button-box">
+        <input type="submit" [disabled]="!cityForm.valid" value="Search">
+    </div>
+</form>
