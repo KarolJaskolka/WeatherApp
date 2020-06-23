@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+header {
+    background-color: $header;
+    padding: 1em;
+    color: $textLight;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    text-align: center;
+}

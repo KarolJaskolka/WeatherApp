@@ -1,0 +1,22 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+main {
+    grid-column: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 90.6px);
+}
+
+@media(max-width: 760px){
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    main {
+        grid-column: 1/3;
+    }
+}

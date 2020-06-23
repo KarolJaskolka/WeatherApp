@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+$header: #420000;
+$button: #eae9e9;
+$second: #d4d7dd;
+$background: #f6f6f6;
+
+$red: #ff0000;
+$green: #00ff00;
+$yellow: #ffff00;
+
+$textLight: #ddd;
+$textDark: #222;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background;
+    font-family: 'Hind', sans-serif
+}
+
+a, a:hover {
+    color: $textLight;
+    text-decoration: none;
+}
+
+app-home {
+    width: 100%;
+}
