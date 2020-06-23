@@ -16,19 +16,19 @@ export class WeatherService {
   constructor(private http:HttpClient) { }
 
   getWeatherByCity(city: string):Observable<Weather> {
-    return this.http.get<Weather>(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.key}&units=metric`)
+    return this.http.get<Weather>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.key}&units=metric`)
   }
 
   getWeatherByCoords(lat: number, lon: number) {
-    return this.http.get<Weather>(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.key}&units=metric`)
+    return this.http.get<Weather>(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.key}&units=metric`)
   }
 
   getForecastByCoords(lat: number, lon: number){
-    return this.http.get<Forecast>(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly}&appid=${this.key}&units=metric`)
+    return this.http.get<Forecast>(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={current,minutely,hourly}&appid=${this.key}&units=metric`)
   }
 
   getWeatherIcon(icon: string) {
-    return this.http.get<Weather>(`http://openweathermap.org/img/wn/${icon}`)
+    return this.http.get<Weather>(`https://openweathermap.org/img/wn/${icon}`)
   }
 
 }
