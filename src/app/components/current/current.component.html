@@ -16,4 +16,5 @@
             <p>Humidity: {{weather.main.humidity}} %</p>
         </section>
     </article>
+    <app-forecast [lat]="weather.coord.lat" [lon]="weather.coord.lon"></app-forecast>
 </ng-container>
