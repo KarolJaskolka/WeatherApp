@@ -1,12 +1,13 @@
 <section>
     <ng-container *ngIf="forecast">
-        <div *ngFor="let day of forecast.daily; let i = index">
-            <ng-container *ngIf="i != 0">
+        <ng-container *ngFor="let day of forecast.daily; let i = index">
+            <div *ngIf="i != 0">
                 <h4>{{dates[i] | date: 'dd/MM' }}</h4>
-                <img src="https://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png">
+                <figure>
+                    <img  src="https://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png">
+                </figure>
                 <h3>{{day.temp.day | number:'1.0-0' }} °C</h3>
-            </ng-container>
-        </div>
+            </div>
+        </ng-container>
     </ng-container>
 </section>
-

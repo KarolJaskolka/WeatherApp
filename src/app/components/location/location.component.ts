@@ -14,11 +14,12 @@ export class LocationComponent implements OnInit, OnDestroy {
   city: string;
   weather: Weather;
   weatherSubscription: Subscription;
+  routeSubscription: Subscription;
 
   constructor(private weatherService:WeatherService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
+    this.routeSubscription = this.route.queryParams.subscribe(params => {
       this.city = params['city'].replace(/-/g,'+');
     });
     this.getWeather();
@@ -32,6 +33,7 @@ export class LocationComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.weatherSubscription.unsubscribe();
+    this.routeSubscription.unsubscribe();
   }
 
 }

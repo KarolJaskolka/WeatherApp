@@ -3,6 +3,12 @@
 section {
     display: flex;
     background-color: $second;
+    div {
+        flex: 1;
+        figure {
+            text-align: center;
+        }
+    }
 }
 
 div:nth-child(even) {
